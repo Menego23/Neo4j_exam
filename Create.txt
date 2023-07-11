@@ -1,6 +1,3 @@
-Creazione Nodi
-Nodi Persona
-
 create (Sabrina_Rossi:Persona {nome: 'Sabrina', cognome: 'Rossi', Sim: '+39 574 159 8525'})
 create (Mario_Bianchi:Persona {nome: 'Mario', cognome: 'Bianchi', Sim: '+39 123 456 7890'})
 create (Laura_Verdi:Persona {nome: 'Laura', cognome: 'Verdi', Sim: '+39 987 654 3210'})
@@ -17,7 +14,7 @@ create (Sara_Marchetti:Persona {nome: 'Sara', cognome: 'Marchetti', Sim: '+39 98
 create (Marco_Rossi:Persona {nome: 'Marco', cognome: 'Rossi', Sim: '+39 246 810 2468'})
 create (Elena_Bruno:Persona {nome: 'Elena', cognome: 'Bruno', Sim: '+39 864 209 4680'})
 create (Giovanni_Santoro:Persona {nome: 'Giovanni', cognome: 'Santoro', Sim: '+39 753 951 2468'})
-create (Roberta_D'Amico:Persona {nome: 'Roberta', cognome: "D'Amico", Sim: '+39 135 790 3578'})
+create (Roberta_Damico:Persona {nome: 'Roberta', cognome: "D'Amico", Sim: '+39 135 790 3578'})
 create (Antonio_Moretti:Persona {nome: 'Antonio', cognome: 'Moretti', Sim: '+39 987 654 2486'})
 create (Francesca_Giordano:Persona {nome: 'Francesca', cognome: 'Giordano', Sim: '+39 753 951 2468'})
 create (Davide_Ricciardi:Persona {nome: 'Davide', cognome: 'Ricciardi', Sim: '+39 864 209 3578'})
@@ -51,23 +48,17 @@ create (Gabriele_Conti:Persona {nome: 'Gabriele', cognome: 'Conti', Sim: '+39 75
 create (Valentina_Russo:Persona {nome: 'Valentina', cognome: 'Russo', Sim: '+39 864 209 3578'})
 create (Matteo_Marini:Persona {nome: 'Matteo', cognome: 'Marini', Sim: '+39 135 790 4680'})
 create (Giulia_Morelli:Persona {nome: 'Giulia', cognome: 'Morelli', Sim: '+39 987 654 2468'})
-
-Nodi Luoghi 
-
-create (Banca_Mediolanum:Luogo {nome: 'Banca Mediolanum', coordinate: {latitudine: 45.46, longitudine: 9.18}})
-create (Museo_del_Novecento:Luogo {nome: 'Museo del Novecento', coordinate: {latitudine: 45.46, longitudine: 9.19}})
-create (Duomo_di_Milano:Luogo {nome: 'Duomo di Milano', coordinate: {latitudine: 45.46, longitudine: 9.19}})
-create (Teatro_alla_Scala:Luogo {nome: 'Teatro alla Scala', coordinate: {latitudine: 45.47, longitudine: 9.19}})
-create (Galleria_Vittorio_Emanuele_II:Luogo {nome: 'Galleria Vittorio Emanuele II', coordinate: {latitudine: 45.47, longitudine: 9.19}})
-create (Castello_Sforzesco:Luogo {nome: 'Castello Sforzesco', coordinate: {latitudine: 45.47, longitudine: 9.18}})
-create (Navigli:Luogo {nome: 'Navigli', coordinate: {latitudine: 45.46, longitudine: 9.17}})
-create (Parco_Sempione:Luogo {nome: 'Parco Sempione', coordinate: {latitudine: 45.47, longitudine: 9.17}})
-create (Università_Bocconi:Luogo {nome: 'Università Bocconi', coordinate: {latitudine: 45.44, longitudine: 9.18}})
-create (Cimitero_Monumentale:Luogo {nome: 'Cimitero Monumentale', coordinate: {latitudine: 45.48, longitudine: 9.17}})
-
-Nodi Celle
-
-create (cella_1: Cella {nome:Cella_1, id: 653487})
+create (Banca_Mediolanum:Luogo {nome: 'Banca Mediolanum', latitudine: 45.46, longitudine: 9.18})
+create (Museo_del_Novecento:Luogo {nome: 'Museo del Novecento', latitudine: 45.46, longitudine: 9.19})
+create (Duomo_di_Milano:Luogo {nome: 'Duomo di Milano', latitudine: 45.46, longitudine: 9.19})
+create (Teatro_alla_Scala:Luogo {nome: 'Teatro alla Scala', latitudine: 45.47, longitudine: 9.19})
+create (Galleria_Vittorio_Emanuele_II:Luogo {nome: 'Galleria Vittorio Emanuele II', latitudine: 45.47, longitudine: 9.19})
+create (Castello_Sforzesco:Luogo {nome: 'Castello Sforzesco', latitudine: 45.47, longitudine: 9.18})
+create (Navigli:Luogo {nome: 'Navigli', latitudine: 45.46, longitudine: 9.17})
+create (Parco_Sempione:Luogo {nome: 'Parco Sempione', latitudine: 45.47, longitudine: 9.17})
+create (Università_Bocconi:Luogo {nome: 'Università Bocconi', latitudine: 45.44, longitudine: 9.18})
+create (Cimitero_Monumentale:Luogo {nome: 'Cimitero Monumentale', latitudine: 45.48, longitudine: 9.17})
+create (cella_1:Cella {nome: 'Cella_1', id: 653487})
 create (cella_2:Cella {nome: 'Cella_2', id: 123456})
 create (cella_3:Cella {nome: 'Cella_3', id: 987654})
 create (cella_4:Cella {nome: 'Cella_4', id: 456789})
@@ -77,12 +68,6 @@ create (cella_7:Cella {nome: 'Cella_7', id: 321987})
 create (cella_8:Cella {nome: 'Cella_8', id: 918273})
 create (cella_9:Cella {nome: 'Cella_9', id: 246810})
 create (cella_10:Cella {nome: 'Cella_10', id: 135792})
-
-
-Relazioni 
-
-Relazione: persona --> cella
-
 create (Sabrina_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023/07/11 12:35:15'), Fine_collegamento: datetime('2023/07/11 16:52:17')}]->(Cella_1)
 create (Mario_Bianchi)-[:Collegata {Inizio_collegamento: datetime('2023/07/12 09:15:00'), Fine_collegamento: datetime('2023/07/12 14:30:45')}]->(Cella_2)
 create (Laura_Verdi)-[:Collegata {Inizio_collegamento: datetime('2023/07/13 15:20:30'), Fine_collegamento: datetime('2023/07/13 19:45:10')}]->(Cella_3)
@@ -99,7 +84,7 @@ create (Sara_Marchetti)-[:Collegata {Inizio_collegamento: datetime('2023/07/23 1
 create (Marco_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023/07/24 14:20:50'), Fine_collegamento: datetime('2023/07/24 18:35:30')}]->(Cella_4)
 create (Elena_Bruno)-[:Collegata {Inizio_collegamento: datetime('2023/07/25 13:05:35'), Fine_collegamento: datetime('2023/07/25 17:20:15')}]->(Cella_5)
 create (Giovanni_Santoro)-[:Collegata {Inizio_collegamento: datetime('2023/07/26 10:30:20'), Fine_collegamento: datetime('2023/07/26 14:45:00')}]->(Cella_6)
-create (Roberta_D'Amico)-[:Collegata {Inizio_collegamento: datetime('2023/07/27 15:55:55'), Fine_collegamento: datetime('2023/07/27 20:10:35')}]->(Cella_7)
+create (Roberta_Damico)-[:Collegata {Inizio_collegamento: datetime('2023/07/27 15:55:55'), Fine_collegamento: datetime('2023/07/27 20:10:35')}]->(Cella_7)
 create (Antonio_Moretti)-[:Collegata {Inizio_collegamento: datetime('2023/07/28 12:20:50'), Fine_collegamento: datetime('2023/07/28 16:35:30')}]->(Cella_8)
 create (Francesca_Giordano)-[:Collegata {Inizio_collegamento: datetime('2023/07/29 09:40:45'), Fine_collegamento: datetime('2023/07/29 13:55:25')}]->(Cella_9)
 create (Davide_Ricciardi)-[:Collegata {Inizio_collegamento: datetime('2023/07/30 16:15:40'), Fine_collegamento: datetime('2023/07/30 20:30:20')}]->(Cella_10)
@@ -133,10 +118,6 @@ create (Gabriele_Conti)-[:Collegata {Inizio_collegamento: datetime('2023/07/26 1
 create (Valentina_Russo)-[:Collegata {Inizio_collegamento: datetime('2023/07/27 10:15:50'), Fine_collegamento: datetime('2023/07/27 14:30:30')}]->(Cella_8)
 create (Matteo_Marini)-[:Collegata {Inizio_collegamento: datetime('2023/07/28 16:35:25'), Fine_collegamento: datetime('2023/07/28 20:50:05')}]->(Cella_9)
 create (Giulia_Morelli)-[:Collegata {Inizio_collegamento: datetime('2023/07/29 13:55:50'), Fine_collegamento: datetime('2023/07/29 18:10:30')}]->(Cella_10)
-
-
-Relazione: Cella --> Luogo
-
 create (cella_1)-[:Situata]->(Banca_Mediolanum)
 create (cella_2)-[:Situata]->(Museo_del_Novecento)
 create (cella_3)-[:Situata]->(Duomo_di_Milano)
