@@ -58,66 +58,68 @@ create (Navigli:Luogo {nome: 'Navigli', latitudine: 45.46, longitudine: 9.17})
 create (Parco_Sempione:Luogo {nome: 'Parco Sempione', latitudine: 45.47, longitudine: 9.17})
 create (Università_Bocconi:Luogo {nome: 'Università Bocconi', latitudine: 45.44, longitudine: 9.18})
 create (Cimitero_Monumentale:Luogo {nome: 'Cimitero Monumentale', latitudine: 45.48, longitudine: 9.17})
-create (cella_1:Cella {nome: 'Cella_1', id: 653487})
-create (cella_2:Cella {nome: 'Cella_2', id: 123456})
-create (cella_3:Cella {nome: 'Cella_3', id: 987654})
-create (cella_4:Cella {nome: 'Cella_4', id: 456789})
-create (cella_5:Cella {nome: 'Cella_5', id: 789123})
-create (cella_6:Cella {nome: 'Cella_6', id: 654321})
-create (cella_7:Cella {nome: 'Cella_7', id: 321987})
-create (cella_8:Cella {nome: 'Cella_8', id: 918273})
-create (cella_9:Cella {nome: 'Cella_9', id: 246810})
-create (cella_10:Cella {nome: 'Cella_10', id: 135792})
-create (Sabrina_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023/07/11 12:35:15'), Fine_collegamento: datetime('2023/07/11 16:52:17')}]->(Cella_1)
-create (Mario_Bianchi)-[:Collegata {Inizio_collegamento: datetime('2023/07/12 09:15:00'), Fine_collegamento: datetime('2023/07/12 14:30:45')}]->(Cella_2)
-create (Laura_Verdi)-[:Collegata {Inizio_collegamento: datetime('2023/07/13 15:20:30'), Fine_collegamento: datetime('2023/07/13 19:45:10')}]->(Cella_3)
-create (Luca_Russo)-[:Collegata {Inizio_collegamento: datetime('2023/07/14 11:10:25'), Fine_collegamento: datetime('2023/07/14 16:25:05')}]->(Cella_4)
-create (Federica_Ferrari)-[:Collegata {Inizio_collegamento: datetime('2023/07/15 14:40:50'), Fine_collegamento: datetime('2023/07/15 18:55:30')}]->(Cella_5)
-create (Alessandro_Romano)-[:Collegata {Inizio_collegamento: datetime('2023/07/16 13:25:35'), Fine_collegamento: datetime('2023/07/16 17:40:15')}]->(Cella_6)
-create (Giulia_Ricci)-[:Collegata {Inizio_collegamento: datetime('2023/07/17 10:50:20'), Fine_collegamento: datetime('2023/07/17 15:05:00')}]->(Cella_7)
-create (Simone_Esposito)-[:Collegata {Inizio_collegamento: datetime('2023/07/18 16:30:55'), Fine_collegamento: datetime('2023/07/18 20:45:35')}]->(Cella_8)
-create (Martina_Gallo)-[:Collegata {Inizio_collegamento: datetime('2023/07/19 13:55:50'), Fine_collegamento: datetime('2023/07/19 18:10:30')}]->(Cella_9)
-create (Andrea_Marini)-[:Collegata {Inizio_collegamento: datetime('2023/07/20 11:25:55'), Fine_collegamento: datetime('2023/07/20 15:40:35')}]->(Cella_10)
-create (Valentina_Conti)-[:Collegata {Inizio_collegamento: datetime('2023/07/21 10:15:00'), Fine_collegamento: datetime('2023/07/21 14:30:45')}]->(Cella_1)
-create (Paolo_Rizzo)-[:Collegata {Inizio_collegamento: datetime('2023/07/22 14:10:30'), Fine_collegamento: datetime('2023/07/22 18:25:10')}]->(Cella_2)
-create (Sara_Marchetti)-[:Collegata {Inizio_collegamento: datetime('2023/07/23 11:00:25'), Fine_collegamento: datetime('2023/07/23 16:15:05')}]->(Cella_3)
-create (Marco_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023/07/24 14:20:50'), Fine_collegamento: datetime('2023/07/24 18:35:30')}]->(Cella_4)
-create (Elena_Bruno)-[:Collegata {Inizio_collegamento: datetime('2023/07/25 13:05:35'), Fine_collegamento: datetime('2023/07/25 17:20:15')}]->(Cella_5)
-create (Giovanni_Santoro)-[:Collegata {Inizio_collegamento: datetime('2023/07/26 10:30:20'), Fine_collegamento: datetime('2023/07/26 14:45:00')}]->(Cella_6)
-create (Roberta_Damico)-[:Collegata {Inizio_collegamento: datetime('2023/07/27 15:55:55'), Fine_collegamento: datetime('2023/07/27 20:10:35')}]->(Cella_7)
-create (Antonio_Moretti)-[:Collegata {Inizio_collegamento: datetime('2023/07/28 12:20:50'), Fine_collegamento: datetime('2023/07/28 16:35:30')}]->(Cella_8)
-create (Francesca_Giordano)-[:Collegata {Inizio_collegamento: datetime('2023/07/29 09:40:45'), Fine_collegamento: datetime('2023/07/29 13:55:25')}]->(Cella_9)
-create (Davide_Ricciardi)-[:Collegata {Inizio_collegamento: datetime('2023/07/30 16:15:40'), Fine_collegamento: datetime('2023/07/30 20:30:20')}]->(Cella_10)
-create (Cristina_Russo)-[:Collegata {Inizio_collegamento: datetime('2023/07/31 14:35:35'), Fine_collegamento: datetime('2023/07/31 18:50:15')}]->(Cella_1)
-create (Stefano_Bellini)-[:Collegata {Inizio_collegamento: datetime('2023/07/01 11:50:30'), Fine_collegamento: datetime('2023/07/01 16:05:10')}]->(Cella_2)
-create (Silvia_Caputo)-[:Collegata {Inizio_collegamento: datetime('2023/07/02 10:05:25'), Fine_collegamento: datetime('2023/07/02 14:20:05')}]->(Cella_3)
-create (Lorenzo_Monti)-[:Collegata {Inizio_collegamento: datetime('2023/07/03 15:25:40'), Fine_collegamento: datetime('2023/07/03 19:40:20')}]->(Cella_4)
-create (Anna_Morelli)-[:Collegata {Inizio_collegamento: datetime('2023/07/04 12:45:55'), Fine_collegamento: datetime('2023/07/04 16:00:35')}]->(Cella_5)
-create (Giacomo_Vitale)-[:Collegata {Inizio_collegamento: datetime('2023/07/05 09:10:10'), Fine_collegamento: datetime('2023/07/05 13:24:50')}]->(Cella_6)
-create (Camilla_Pellegrini)-[:Collegata {Inizio_collegamento: datetime('2023/07/06 16:30:25'), Fine_collegamento: datetime('2023/07/06 20:45:05')}]->(Cella_7)
-create (Alessia_Ruggiero)-[:Collegata {Inizio_collegamento: datetime('2023/07/07 13:55:40'), Fine_collegamento: datetime('2023/07/07 18:10:20')}]->(Cella_8)
-create (Simone_Marino)-[:Collegata {Inizio_collegamento: datetime('2023/07/07 11:15:55'), Fine_collegamento: datetime('2023/07/07 15:30:35')}]->(Cella_9)
-create (Chiara_Caruso)-[:Collegata {Inizio_collegamento: datetime('2023/07/09 10:20:10'), Fine_collegamento: datetime('2023/07/09 14:34:50')}]->(Cella_10)
-create (Fabio_Lombardi)-[:Collegata {Inizio_collegamento: datetime('2023/07/10 15:45:25'), Fine_collegamento: datetime('2023/07/10 20:00:05')}]->(Cella_1)
-create (Monica_Fiore)-[:Collegata {Inizio_collegamento: datetime('2023/07/11 13:00:40'), Fine_collegamento: datetime('2023/07/11 17:15:20')}]->(Cella_2)
-create (Riccardo_Palmieri)-[:Collegata {Inizio_collegamento: datetime('2023/07/12 09:25:55'), Fine_collegamento: datetime('2023/07/12 13:40:35')}]->(Cella_3)
-create (Caterina_Galli)-[:Collegata {Inizio_collegamento: datetime('2023/07/13 16:40:10'), Fine_collegamento: datetime('2023/07/13 20:54:50')}]->(Cella_4)
-create (Filippo_Longo)-[:Collegata {Inizio_collegamento: datetime('2023/07/14 14:00:25'), Fine_collegamento: datetime('2023/07/14 18:15:05')}]->(Cella_5)
-create (Elisa_Martini)-[:Collegata {Inizio_collegamento: datetime('2023/07/15 11:20:40'), Fine_collegamento: datetime('2023/07/15 15:35:20')}]->(Cella_6)
-create (Gianluca_Rinaldi)-[:Collegata {Inizio_collegamento: datetime('2023/07/16 10:35:55'), Fine_collegamento: datetime('2023/07/16 14:50:35')}]->(Cella_7)
-create (Serena_Parisi)-[:Collegata {Inizio_collegamento: datetime('2023/07/17 15:50:10'), Fine_collegamento: datetime('2023/07/17 20:04:50')}]->(Cella_8)
-create (Luigi_Costa)-[:Collegata {Inizio_collegamento: datetime('2023/07/18 13:15:35'), Fine_collegamento: datetime('2023/07/18 17:30:15')}]->(Cella_9)
-create (Valeria_Marchetti)-[:Collegata {Inizio_collegamento: datetime('2023/07/19 10:40:50'), Fine_collegamento: datetime('2023/07/19 14:55:30')}]->(Cella_10)
-create (Daniele_Romano)-[:Collegata {Inizio_collegamento: datetime('2023/07/20 13:35:55'), Fine_collegamento: datetime('2023/07/20 17:50:35')}]->(Cella_1)
-create (Sofia_Bruni)-[:Collegata {Inizio_collegamento: datetime('2023/07/21 10:55:10'), Fine_collegamento: datetime('2023/07/21 15:09:50')}]->(Cella_2)
-create (Nicola_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023/07/22 14:05:35'), Fine_collegamento: datetime('2023/07/22 18:20:15')}]->(Cella_3)
-create (Marta_Caputo)-[:Collegata {Inizio_collegamento: datetime('2023/07/23 11:20:40'), Fine_collegamento: datetime('2023/07/23 15:35:20')}]->(Cella_4)
-create (Andrea_Gentile)-[:Collegata {Inizio_collegamento: datetime('2023/07/24 10:25:55'), Fine_collegamento: datetime('2023/07/24 14:40:35')}]->(Cella_5)
-create (Elena_Bellini)-[:Collegata {Inizio_collegamento: datetime('2023/07/25 15:40:10'), Fine_collegamento: datetime('2023/07/25 19:54:50')}]->(Cella_6)
-create (Gabriele_Conti)-[:Collegata {Inizio_collegamento: datetime('2023/07/26 13:00:25'), Fine_collegamento: datetime('2023/07/26 17:15:05')}]->(Cella_7)
-create (Valentina_Russo)-[:Collegata {Inizio_collegamento: datetime('2023/07/27 10:15:50'), Fine_collegamento: datetime('2023/07/27 14:30:30')}]->(Cella_8)
-create (Matteo_Marini)-[:Collegata {Inizio_collegamento: datetime('2023/07/28 16:35:25'), Fine_collegamento: datetime('2023/07/28 20:50:05')}]->(Cella_9)
-create (Giulia_Morelli)-[:Collegata {Inizio_collegamento: datetime('2023/07/29 13:55:50'), Fine_collegamento: datetime('2023/07/29 18:10:30')}]->(Cella_10)
+create (cella_1:Cella {nome: 'cella_1', id: 653487})
+create (cella_2:Cella {nome: 'cella_2', id: 123456})
+create (cella_3:Cella {nome: 'cella_3', id: 987654})
+create (cella_4:Cella {nome: 'cella_4', id: 456789})
+create (cella_5:Cella {nome: 'cella_5', id: 789123})
+create (cella_6:Cella {nome: 'cella_6', id: 654321})
+create (cella_7:Cella {nome: 'cella_7', id: 321987})
+create (cella_8:Cella {nome: 'cella_8', id: 918273})
+create (cella_9:Cella {nome: 'cella_9', id: 246810})
+create (cella_10:Cella {nome: 'cella_10', id: 135792})
+create
+(Sabrina_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023-07-11T12:35:15'), Fine_collegamento: datetime('2023-07-11T16:52:17')}]->(cella_1),
+(Mario_Bianchi)-[:Collegata {Inizio_collegamento: datetime('2023-07-12T09:15:00'), Fine_collegamento: datetime('2023-07-12T14:30:45')}]->(cella_2),
+(Laura_Verdi)-[:Collegata {Inizio_collegamento: datetime('2023-07-13T15:20:30'), Fine_collegamento: datetime('2023-07-13T19:45:10')}]->(cella_3),
+(Luca_Russo)-[:Collegata {Inizio_collegamento: datetime('2023-07-14T11:10:25'), Fine_collegamento: datetime('2023-07-14T16:25:05')}]->(cella_4),
+(Federica_Ferrari)-[:Collegata {Inizio_collegamento: datetime('2023-07-15T14:40:50'), Fine_collegamento: datetime('2023-07-15T18:55:30')}]->(cella_5),
+(Alessandro_Romano)-[:Collegata {Inizio_collegamento: datetime('2023-07-16T13:25:35'), Fine_collegamento: datetime('2023-07-16T17:40:15')}]->(cella_6),
+(Giulia_Ricci)-[:Collegata {Inizio_collegamento: datetime('2023-07-17T10:50:20'), Fine_collegamento: datetime('2023-07-17T15:05:00')}]->(cella_7),
+(Simone_Esposito)-[:Collegata {Inizio_collegamento: datetime('2023-07-18T16:30:55'), Fine_collegamento: datetime('2023-07-18T20:45:35')}]->(cella_8),
+(Martina_Gallo)-[:Collegata {Inizio_collegamento: datetime('2023-07-19T13:55:50'), Fine_collegamento: datetime('2023-07-19T18:10:30')}]->(cella_9),
+(Andrea_Marini)-[:Collegata {Inizio_collegamento: datetime('2023-07-20T11:25:55'), Fine_collegamento: datetime('2023-07-20T15:40:35')}]->(cella_10),
+(Valentina_Conti)-[:Collegata {Inizio_collegamento: datetime('2023-07-21T10:15:00'), Fine_collegamento: datetime('2023-07-21T14:30:45')}]->(cella_1),
+(Paolo_Rizzo)-[:Collegata {Inizio_collegamento: datetime('2023-07-22T14:10:30'), Fine_collegamento: datetime('2023-07-22T18:25:10')}]->(cella_2),
+(Sara_Marchetti)-[:Collegata {Inizio_collegamento: datetime('2023-07-23T11:00:25'), Fine_collegamento: datetime('2023-07-23T16:15:05')}]->(cella_3),
+(Marco_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023-07-24T14:20:50'), Fine_collegamento: datetime('2023-07-24T18:35:30')}]->(cella_4),
+(Elena_Bruno)-[:Collegata {Inizio_collegamento: datetime('2023-07-25T13:05:35'), Fine_collegamento: datetime('2023-07-25T17:20:15')}]->(cella_5),
+(Giovanni_Santoro)-[:Collegata {Inizio_collegamento: datetime('2023-07-26T10:30:20'), Fine_collegamento: datetime('2023-07-26T14:45:00')}]->(cella_6),
+(Roberta_Damico)-[:Collegata {Inizio_collegamento: datetime('2023-07-27T15:55:55'), Fine_collegamento: datetime('2023-07-27T20:10:35')}]->(cella_7),
+(Antonio_Moretti)-[:Collegata {Inizio_collegamento: datetime('2023-07-28T12:20:50'), Fine_collegamento: datetime('2023-07-28T16:35:30')}]->(cella_8),
+(Francesca_Giordano)-[:Collegata {Inizio_collegamento: datetime('2023-07-29T09:40:45'), Fine_collegamento: datetime('2023-07-29T13:55:25')}]->(cella_9),
+(Davide_Ricciardi)-[:Collegata {Inizio_collegamento: datetime('2023-07-30T16:15:40'), Fine_collegamento: datetime('2023-07-30T20:30:20')}]->(cella_10),
+(Cristina_Russo)-[:Collegata {Inizio_collegamento: datetime('2023-07-31T14:35:35'), Fine_collegamento: datetime('2023-07-31T18:50:15')}]->(cella_1),
+(Stefano_Bellini)-[:Collegata {Inizio_collegamento: datetime('2023-07-01T11:50:30'), Fine_collegamento: datetime('2023-07-01T16:05:10')}]->(cella_2),
+(Silvia_Caputo)-[:Collegata {Inizio_collegamento: datetime('2023-07-02T10:05:25'), Fine_collegamento: datetime('2023-07-02T14:20:05')}]->(cella_3),
+(Lorenzo_Monti)-[:Collegata {Inizio_collegamento: datetime('2023-07-03T15:25:40'), Fine_collegamento: datetime('2023-07-03T19:40:20')}]->(cella_4),
+(Anna_Morelli)-[:Collegata {Inizio_collegamento: datetime('2023-07-04T12:45:55'), Fine_collegamento: datetime('2023-07-04T16:00:35')}]->(cella_5),
+(Giacomo_Vitale)-[:Collegata {Inizio_collegamento: datetime('2023-07-05T09:10:10'), Fine_collegamento: datetime('2023-07-05T13:24:50')}]->(cella_6),
+(Camilla_Pellegrini)-[:Collegata {Inizio_collegamento: datetime('2023-07-06T16:30:25'), Fine_collegamento: datetime('2023-07-06T20:45:05')}]->(cella_7),
+(Alessia_Ruggiero)-[:Collegata {Inizio_collegamento: datetime('2023-07-07T13:55:40'), Fine_collegamento: datetime('2023-07-07T18:10:20')}]->(cella_8),
+(Simone_Marino)-[:Collegata {Inizio_collegamento: datetime('2023-07-07T11:15:55'), Fine_collegamento: datetime('2023-07-07T15:30:35')}]->(cella_9),
+(Chiara_Caruso)-[:Collegata {Inizio_collegamento: datetime('2023-07-09T10:20:10'), Fine_collegamento: datetime('2023-07-09T14:34:50')}]->(cella_10),
+(Fabio_Lombardi)-[:Collegata {Inizio_collegamento: datetime('2023-07-10T15:45:25'), Fine_collegamento: datetime('2023-07-10T20:00:05')}]->(cella_1),
+(Monica_Fiore)-[:Collegata {Inizio_collegamento: datetime('2023-07-11T13:00:40'), Fine_collegamento: datetime('2023-07-11T17:15:20')}]->(cella_2),
+(Riccardo_Palmieri)-[:Collegata {Inizio_collegamento: datetime('2023-07-12T09:25:55'), Fine_collegamento: datetime('2023-07-12T13:40:35')}]->(cella_3),
+(Caterina_Galli)-[:Collegata {Inizio_collegamento: datetime('2023-07-13T16:40:10'), Fine_collegamento: datetime('2023-07-13T20:54:50')}]->(cella_4),
+(Filippo_Longo)-[:Collegata {Inizio_collegamento: datetime('2023-07-14T14:00:25'), Fine_collegamento: datetime('2023-07-14T18:15:05')}]->(cella_5),
+(Elisa_Martini)-[:Collegata {Inizio_collegamento: datetime('2023-07-15T11:20:40'), Fine_collegamento: datetime('2023-07-15T15:35:20')}]->(cella_6),
+(Gianluca_Rinaldi)-[:Collegata {Inizio_collegamento: datetime('2023-07-16T10:35:55'), Fine_collegamento: datetime('2023-07-16T14:50:35')}]->(cella_7),
+(Serena_Parisi)-[:Collegata {Inizio_collegamento: datetime('2023-07-17T15:50:10'), Fine_collegamento: datetime('2023-07-17T20:04:50')}]->(cella_8),
+(Luigi_Costa)-[:Collegata {Inizio_collegamento: datetime('2023-07-18T13:15:35'), Fine_collegamento: datetime('2023-07-18T17:30:15')}]->(cella_9),
+(Valeria_Marchetti)-[:Collegata {Inizio_collegamento: datetime('2023-07-19T10:40:50'), Fine_collegamento: datetime('2023-07-19T14:55:30')}]->(cella_10),
+(Daniele_Romano)-[:Collegata {Inizio_collegamento: datetime('2023-07-20T13:35:55'), Fine_collegamento: datetime('2023-07-20T17:50:35')}]->(cella_1),
+(Sofia_Bruni)-[:Collegata {Inizio_collegamento: datetime('2023-07-21T10:55:10'), Fine_collegamento: datetime('2023-07-21T15:09:50')}]->(cella_2),
+(Nicola_Rossi)-[:Collegata {Inizio_collegamento: datetime('2023-07-22T14:05:35'), Fine_collegamento: datetime('2023-07-22T18:20:15')}]->(cella_3),
+(Marta_Caputo)-[:Collegata {Inizio_collegamento: datetime('2023-07-23T11:20:40'), Fine_collegamento: datetime('2023-07-23T15:35:20')}]->(cella_4),
+(Andrea_Gentile)-[:Collegata {Inizio_collegamento: datetime('2023-07-24T10:25:55'), Fine_collegamento: datetime('2023-07-24T14:40:35')}]->(cella_5),
+(Elena_Bellini)-[:Collegata {Inizio_collegamento: datetime('2023-07-25T15:40:10'), Fine_collegamento: datetime('2023-07-25T19:54:50')}]->(cella_6),
+(Gabriele_Conti)-[:Collegata {Inizio_collegamento: datetime('2023-07-26T13:00:25'), Fine_collegamento: datetime('2023-07-26T17:15:05')}]->(cella_7),
+(Valentina_Russo)-[:Collegata {Inizio_collegamento: datetime('2023-07-27T10:15:50'), Fine_collegamento: datetime('2023-07-27T14:30:30')}]->(cella_8),
+(Matteo_Marini)-[:Collegata {Inizio_collegamento: datetime('2023-07-28T16:35:25'), Fine_collegamento: datetime('2023-07-28T20:50:05')}]->(cella_9),
+(Giulia_Morelli)-[:Collegata {Inizio_collegamento: datetime('2023-07-29T13:55:50'), Fine_collegamento: datetime('2023-07-29T18:10:30')}]->(cella_10)
+
 create (cella_1)-[:Situata]->(Banca_Mediolanum)
 create (cella_2)-[:Situata]->(Museo_del_Novecento)
 create (cella_3)-[:Situata]->(Duomo_di_Milano)
