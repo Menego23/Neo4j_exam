@@ -130,3 +130,8 @@ create (cella_7)-[:Situata]->(Navigli)
 create (cella_8)-[:Situata]->(Parco_Sempione)
 create (cella_9)-[:Situata]->(Università_Bocconi)
 create (cella_10)-[:Situata]->(Cimitero_Monumentale)
+
+
+CREATE (police1:PoliceOfficer {name: 'Mario Rossi', password: 'mario123'})
+CREATE (police2:PoliceOfficer {name: 'Laura Bianchi', password: 'laura456'})
+CREATE (police3:PoliceOfficer {name: 'Luca Verdi', password: 'luca789'})
