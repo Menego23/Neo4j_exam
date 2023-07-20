@@ -1,10 +1,5 @@
 # Funzioni di gestione degli input
 
-# Configurazione del database Neo4j
-USERNAME = "neo4j"
-PASSWORD = "oAcFTwdlvOYd4LOHfzSAx6_jv8umS-S_1E5g1HbYKn4"
-DATABASE_URL = "neo4j+s://3d212299.databases.neo4j.io"
-
 # Le funzioni di gestione degli input devono ritornare queste strinhe di esempio:
 def find_suspect_by_name(nome):
     QUERY_FIND_SUSPECT = f"""
