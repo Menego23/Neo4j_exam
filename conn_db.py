@@ -1,3 +1,5 @@
+# File per connettersi al database Neo4j e fare query
+
 import click
 from neo4j import GraphDatabase, basic_auth
 
@@ -50,3 +52,8 @@ class DatabaseConnector:
                 fine=end_date,
             )
             return list(result)
+
+
+# Test nuove funzioni
+if __name__ == "__main__":
+    pass
