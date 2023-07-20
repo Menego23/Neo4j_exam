@@ -23,10 +23,21 @@ RETURN DISTINCT p.nome AS nome, p.cognome AS cognome, p.Sim AS sim
 """
 
 QUERY_FIND_SIM_BY_CELL_AND_TIME = f"""
-MATCH (p:Persona)-[:Collegata]->(cella:Cella {{id: {cella_id}})
+MATCH (p:Persona)-[:Collegata]->(cella:Cella {{id: {'cella_id'}}})
 WHERE $inizio <= cella.Inizio_collegamento <= $fine
 RETURN DISTINCT p.nome AS nome, p.cognome AS cognome, p.Sim AS sim
 """
+
+# query = gestione_input.nome_query()
+nome = "Mario"
+query = f"""
+MATCH (p:Persona {{nome: {nome}}})
+MATCH (p)-[:Collegata]->(cella:Cella)
+RETURN cella.id AS cella_id
+"""
+print(type(query))
+query1 = query
+print(type(query1))
 
 
 class DatabaseConnector:
@@ -35,6 +46,10 @@ class DatabaseConnector:
 
     def close(self):
         self.driver.close()
+
+    def query(self, query):
+        with self.driver.session() as session:
+            result = session.run(query)
 
     def find_suspect(self, name):
         with self.driver.session() as session:
@@ -57,5 +72,5 @@ class DatabaseConnector:
 # Test nuove funzioni
 if __name__ == "__main__":
     conn = DatabaseConnector(USERNAME, PASSWORD, DATABASE_URL)
-    conn.find_suspect("Mario")
+    conn.query(query)
     conn.close()

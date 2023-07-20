@@ -1,6 +1,6 @@
 # Funzioni per printare in console la gui
 
-def print_scelta():
+def menu():
     while True:
         scelta = input("1. Con una data, un orario e una persona, elencare le celle telefoniche alle quali le SIM intestate a quella persona erano collegate.\n"
                         "2. Con una data, un orario ed una cella, elencare le persone intestatarie selle SIM collegate a quella cella in quel momento\n"
@@ -30,18 +30,18 @@ def print_scelta():
     match scelta:
         case '1':
             nome = input("Inserisci nome persona: ")
-            return nome, date_time
+            return scelta, date_time, nome
 
         case '2':
             cell = input("Inserisci cella: ")
-            return cell, date_time
+            return scelta, date_time, cell
 
         case '3':
             latitudine = input("Inserisci latitudine: ")
             longitudine = input("Inserisci longitudine: ")
             raggio = input("Inserisci raggio: ")
             coord = [latitudine, longitudine, raggio]
-            return coord, date_time
+            return scelta, date_time, coord
 
         case _:
             print("Scelta non valida")
@@ -49,4 +49,4 @@ def print_scelta():
 
 # Test nuove funzioni
 if __name__ == "__main__":
-    print(print_scelta())
+    print(menu())
