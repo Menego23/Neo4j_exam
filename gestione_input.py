@@ -55,7 +55,7 @@ if __name__ == "__main__":
         finally:
             print("Connessione al database avvenuta con successo")
             print("Testing query 1")
-            print(find_suspect_by_name_datetime("Mario", "2021-01-01 00:00:00"))
+            print(find_suspect_by_name_datetime("Mario", "2023-01-01 00:00:00"))
             print("Testing query 2")
             print(find_suspect_by_cell(1, "2021-01-01 00:00:00"))
             print("Testing query 3")

@@ -20,10 +20,10 @@ MATCH (p:Persona)-[:Collegata]->(cella:Cella)
 WHERE distance(point({latitude: $latitudine, longitude: $longitudine}), point({latitude: cella.latitudine, longitude: cella.longitudine})) <= $raggio
 AND $inizio <= cella.Inizio_collegamento <= $fine
 RETURN DISTINCT p.nome AS nome, p.cognome AS cognome, p.Sim AS sim
-"""
+"""#, latitudine=latitudine, longitudine=longitudine, raggio=raggio, inizio=inizio, fine=fine
 
-QUERY_FIND_SIM_BY_CELL_AND_TIME = f"""
-MATCH (p:Persona)-[:Collegata]->(cella:Cella {{id: {cella_id}})
+QUERY_FIND_SIM_BY_CELL_AND_TIME = """
+MATCH (p:Persona)-[:Collegata]->(cella:Cella {{id: cella_id}})
 WHERE $inizio <= cella.Inizio_collegamento <= $fine
 RETURN DISTINCT p.nome AS nome, p.cognome AS cognome, p.Sim AS sim
 """
@@ -38,7 +38,7 @@ class DatabaseConnector:
 
     def find_suspect(self, name):
         with self.driver.session() as session:
-            result = session.run(QUERY_FIND_SUSPECT, nome=name)
+            result = session.run(QUERY_FIND_SUSPECT, nome=name) #mettere il mattone intero della query
             return [record["cella_id"] for record in result]
 
     def find_suspect_by_location(self, latitude, longitude, radius, start_date, end_date):
