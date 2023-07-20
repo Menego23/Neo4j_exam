@@ -22,8 +22,8 @@ AND $inizio <= cella.Inizio_collegamento <= $fine
 RETURN DISTINCT p.nome AS nome, p.cognome AS cognome, p.Sim AS sim
 """
 
-QUERY_FIND_SIM_BY_CELL_AND_TIME = """
-MATCH (p:Persona)-[:Collegata]->(cella:Cella {id: $cella_id})
+QUERY_FIND_SIM_BY_CELL_AND_TIME = f"""
+MATCH (p:Persona)-[:Collegata]->(cella:Cella {{id: {cella_id}})
 WHERE $inizio <= cella.Inizio_collegamento <= $fine
 RETURN DISTINCT p.nome AS nome, p.cognome AS cognome, p.Sim AS sim
 """
@@ -56,4 +56,6 @@ class DatabaseConnector:
 
 # Test nuove funzioni
 if __name__ == "__main__":
-    pass
+    conn = DatabaseConnector(USERNAME, PASSWORD, DATABASE_URL)
+    conn.find_suspect("Mario")
+    conn.close()
