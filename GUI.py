@@ -1,4 +1,4 @@
-# Funzioni per printare in console la gui
+from datetime import datetime
 
 def menu():
     while True:
@@ -13,18 +13,26 @@ def menu():
         except ValueError:
             print("Scelta non valida")
 
-    data = input("Inserisci data (YY-MM-GG): ")
-    orario = input("Inserisci orario (HH:MM:SS): ")
+    while True:
+        data_input = input("Inserisci data (YYYY-MM-DD): ")
+        orario_input = input("Inserisci orario (HH:MM:SS): ")
 
-    if data == "":
-        data = "2021-01-01 2021-01-02"
-    if orario == "":
-        orario = "00:00:00 00:00:00"
+        # Verifica se la data e l'orario inseriti sono nel formato corretto
+        try:
+            date_time_inizio = datetime.strptime(data_input + " " + orario_input, "%Y-%m-%d %H:%M:%S")
+            break
+        except ValueError:
+            print("Data o orario non validi. Assicurati di inserire una data nel formato corretto (YYYY-MM-DD) e un orario nel formato corretto (HH:MM:SS).")
 
-    data = data.split(" ")
-    orario = orario.split(" ")
-    date_time_inizio = data[0] + "T" + orario[0]
-    date_time_fine = data[1] + "T" + orario[1]
+    # L'utente può inserire una data di fine (data_input2) diversa dalla data di inizio (data_input)
+    data_input2 = input("Inserisci data di fine (YYYY-MM-DD) o lascia vuoto per la stessa data di inizio: ")
+    if not data_input2:
+        data_input2 = data_input
+
+    # Converte le date di inizio e fine in formati di stringa adeguati per l'esecuzione delle query
+    date_time_inizio = date_time_inizio.strftime("%Y-%m-%dT%H:%M:%S")
+    date_time_fine = datetime.strptime(data_input2 + " " + orario_input, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%dT%H:%M:%S")
+
     date_time = [date_time_inizio, date_time_fine]
 
     match scelta:
