@@ -1,12 +1,7 @@
-import conn_db
+# File gestione_input.py
 
-debug = True
-
-# Le funzioni di gestione degli input devono ritornare queste strinhe di esempio:
+# Le funzioni di gestione degli input devono ritornare queste stringhe di esempio:
 def find_suspect_by_name_datetime(nome, datetime):
-    # datetime deve essere una stringa nel formato "YYYY-MM-DD HH:MM:SS"
-    # Con una data, un orario e una persona, 
-    # elencare le celle telefoniche alle quali le SIM intestate a quella persona erano collegate.
     QUERY_FIND_SUSPECT = f"""
     MATCH (p:Persona {{nome: "{nome}"}})-[:Collegata]->(cella:Cella)
     WHERE '{datetime}' <= cella.Inizio_collegamento <= '{datetime}'
@@ -37,37 +32,3 @@ def find_suspect_by_location(latitudine, longitudine, raggio, datetime):
     """
 
     return QUERY_FIND_SUSPECT_BY_LOCATION
-# Test nuove funzioni
-if __name__ == "__main__":
-    if debug:
-        print("debug: gestione_input.py")
-        try:
-            #definisco le credenziali di accesso al database neo4j
-            USERNAME = "neo4j"
-            PASSWORD = "oAcFTwdlvOYd4LOHfzSAx6_jv8umS-S_1E5g1HbYKn4"
-            DATABASE_URL = "neo4j+s://3d212299.databases.neo4j.io"
-            #definisco la connessione al database neo4j
-            conn = conn_db.connessione_db(USERNAME, PASSWORD, DATABASE_URL)
-        except Exception as e:
-            print("Errore nella connessione al database")
-            print(e)
-            exit()
-        finally:
-            print("Connessione al database avvenuta con successo")
-            print("Testing query 1")
-            print(find_suspect_by_name_datetime("Mario", "2023-01-01 00:00:00"))
-            print("Testing query 2")
-            print(find_suspect_by_cell(1, "2021-01-01 00:00:00"))
-            print("Testing query 3")
-            print(find_suspect_by_location(45.0, 9.0, 1000, "2021-01-01 00:00:00"))
-
-            print("bye bye :)")
-            conn.close()
-            exit()
-
-    else:
-        print("Orrore: file non eseguibile  >:(")
-
-        
-
-

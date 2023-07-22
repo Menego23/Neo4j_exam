@@ -3,11 +3,11 @@ from datetime import datetime
 def menu():
     print("╔══════════════════════════════╗")
     print("║   Benvenuto nel Menu         ║")
-    print("╠═════════════════════════════════════════════════════════════════════════════════════════╗")
+    print("╠═══════════════════════════════════════════════════════════════════════════════════════╗")
     print("║ 1. Celle telefoniche collegate a una persona tramite SIM e data                         ║")
     print("║ 2. Persone intestatarie delle SIM collegate a una cella e data                          ║")
     print("║ 3. Persone intestatarie delle SIM collegate a celle in un raggio da coordinate e data   ║")
-    print("╚═════════════════════════════════════════════════════════════════════════════════════════╝")
+    print("╚═══════════════════════════════════════════════════════════════════════════════════════╝")
 
     scelta = input("Inserisci il numero corrispondente all'opzione desiderata: ")
     while scelta not in ['1', '2', '3']:
@@ -64,7 +64,3 @@ def menu():
         print("╔══════════════════════════════╗")
         print("║ Scelta non valida.           ║")
         print("╚══════════════════════════════╝")
-
-# Test nuove funzioni
-if __name__ == "__main__":
-    print(menu())
