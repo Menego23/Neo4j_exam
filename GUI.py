@@ -1,4 +1,8 @@
+# file GUI.py
 from datetime import datetime
+USERNAME = "neo4j"
+PASSWORD = "44MhzQ4SUShStF5KDmY6VJXg87MmPPT087FCF_6lkGc"
+DATABASE_URL = "neo4j+s://7a8887c9.databases.neo4j.io"
 
 def menu():
     print("╔══════════════════════════════╗")
