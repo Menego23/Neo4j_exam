@@ -60,7 +60,6 @@ if __name__ == "__main__":
                 for record in result:
                     print(record)
                 print("__________________\n__________________\n__________________")
-            
             print("Testing query 1")
             print(find_suspect_by_name_datetime("Mario", "2021-01-01 00:00:00"))
             #eseguo la query
