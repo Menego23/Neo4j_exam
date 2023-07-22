@@ -1,4 +1,4 @@
-import conn_db
+from neo4j import GraphDatabase
 
 debug = True
 
@@ -44,27 +44,44 @@ if __name__ == "__main__":
         try:
             #definisco le credenziali di accesso al database neo4j
             USERNAME = "neo4j"
-            PASSWORD = "oAcFTwdlvOYd4LOHfzSAx6_jv8umS-S_1E5g1HbYKn4"
-            DATABASE_URL = "neo4j+s://3d212299.databases.neo4j.io"
+            PASSWORD = "44MhzQ4SUShStF5KDmY6VJXg87MmPPT087FCF_6lkGc"
+            DATABASE_URL = "neo4j+s://7a8887c9.databases.neo4j.io"
             #definisco la connessione al database neo4j
-            conn = conn_db.connessione_db(USERNAME, PASSWORD, DATABASE_URL)
-        except Exception as e:
-            print("Errore nella connessione al database")
-            print(e)
-            exit()
-        finally:
+            conn = GraphDatabase.driver(DATABASE_URL, auth=(USERNAME, PASSWORD))
             print("Connessione al database avvenuta con successo")
+            #stampo le info del db
+            with conn.session() as session:
+                print("Testing query 0")
+                result = session.run("CALL dbms.components()")
+                for record in result:
+                    print(record)
+                #stampo le tabelle e il numero di record
+                result = session.run("CALL db.schema.visualization()")
+                for record in result:
+                    print(record)
+                print("__________________\n__________________\n__________________")
+            
             print("Testing query 1")
             print(find_suspect_by_name_datetime("Mario", "2021-01-01 00:00:00"))
+            #eseguo la query
+            with conn.session() as session:
+                result = session.run(find_suspect_by_name_datetime("Sabrina", "2023-07-11 12:35:15"))
+                print(result.values())
+                for record in result:
+                    print(record)
             print("Testing query 2")
             print(find_suspect_by_cell(1, "2021-01-01 00:00:00"))
             print("Testing query 3")
             print(find_suspect_by_location(45.0, 9.0, 1000, "2021-01-01 00:00:00"))
-
-            print("bye bye :)")
             conn.close()
+            print("bye bye :)")
             exit()
 
+        except Exception as e:
+            print("Errore nella connessione al database")
+            print(e)
+            exit()
+            
     else:
         print("Orrore: file non eseguibile  >:(")
 
