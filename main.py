@@ -1,5 +1,5 @@
 from db_connector import connect_to_db
-from localizza_persona_sospetta import trova_persone_intestatarie_cella_in_momento
+from localizza_persona_sospetta import localizza_persona_sospetta
 from trova_sospetti_zona_reato import trova_sospetti_zona_reato
 from localizza_persone_sospette_in_raggio import trova_persone_intestatarie_cella_in_raggio
 
@@ -16,7 +16,7 @@ def main():
         scelta = input("Seleziona un'opzione: ")
         
         if scelta == "1":
-            trova_persone_intestatarie_cella_in_momento(driver)
+            localizza_persona_sospetta(driver)
         elif scelta == "2":
             trova_sospetti_zona_reato(driver)
         elif scelta == "3":
