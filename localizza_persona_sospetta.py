@@ -1,30 +1,25 @@
-def localizza_persona_sospetta(driver):
-    data = input("Inserisci la data (YYYY-MM-DD): ")
-    orario = input("Inserisci l'orario (HH:MM:SS): ")
-    nome_persona = input("Inserisci il nome della persona sospetta: ")
-    
-    # Query Cypher per localizzare una persona sospetta
-    query = f"""
-        MATCH (p:Persona {{nome: '{nome_persona}'}})-[:Possiede]->(s:Sim)-[collegata:Collegata]->(c:Cella)
-        WHERE datetime('{data}T{orario}') >= collegata.data_inizio_collegamento AND
-              datetime('{data}T{orario}') <= collegata.data_fine_collegamento
-        RETURN c
-    """
-    
+def trova_persone_intestatarie_cella_in_momento(driver, nome_persona, nome_cella, data, orario):
     with driver.session() as session:
-        result = session.run(query)
+        result = session.run(
+            f"""
+            MATCH (p:Persona {{nome: '{nome_persona}'}})-[:Possiede]->(s:Sim)-[collegata:Collegata]->(c:Cella {{nome: '{nome_cella}'}})
+            WHERE datetime('{data}T{orario}') >= collegata.data_inizio_collegamento AND
+                  datetime('{data}T{orario}') <= collegata.data_fine_collegamento
+            RETURN p
+            """
+        )
         
-        # Lista per salvare le celle telefoniche collegate alla persona sospetta
-        celle_collegate = []
+        # Lista per salvare le persone intestatarie delle SIM
+        persone_intestatarie = []
         
         # Itera sui record restituiti dalla query
         for record in result:
-            # Accedi al nodo "Cella" dal record
-            cella_node = record["c"]
-            # Accedi all'attributo "nome" del nodo "Cella"
-            nome_cella = cella_node["nome"]
-            # Aggiungi il nome della cella alla lista delle celle collegate
-            celle_collegate.append(nome_cella)
+            # Accedi al nodo "Persona" dal record
+            persona_node = record["p"]
+            # Accedi all'attributo "nome" del nodo "Persona"
+            nome_persona = persona_node["nome"]
+            # Aggiungi il nome della persona alla lista delle persone intestatarie
+            persone_intestatarie.append(nome_persona)
         
-        # Stampa le celle telefoniche collegate alla persona sospetta
-        print(f"Celle telefoniche collegate a {nome_persona} il {data} alle {orario}: {celle_collegate}")
+        # Stampa le persone intestatarie delle SIM
+        print(f"Persone intestatarie delle SIM collegate alla cella {nome_cella} al {data} alle {orario}: {persone_intestatarie}")

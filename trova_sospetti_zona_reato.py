@@ -5,9 +5,12 @@ def trova_sospetti_zona_reato(driver):
     
     with driver.session() as session:
         result = session.run(
-            """
-            // Query per trovare sospetti in una zona di reato
-            // ... (inserisci qui la query che hai definito in precedenza) ...
+        """
+        MATCH (zona:Cella {{nome: '{nome_zona}'}})
+        MATCH (zona)<-[:Situata]-(cella:Cella)<-[:Collegata]-(sim:Sim)<-[:Possiede]-(persona:Persona)
+        WHERE datetime('{data}T{orario}') >= cella.data_inizio_collegamento AND
+              datetime('{data}T{orario}') <= cella.data_fine_collegamento
+        RETURN DISTINCT persona
             """
         )
         
