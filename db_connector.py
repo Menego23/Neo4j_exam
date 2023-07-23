@@ -1,3 +1,4 @@
+# file db_connector.py
 from neo4j import GraphDatabase
 
 def connect_to_db():

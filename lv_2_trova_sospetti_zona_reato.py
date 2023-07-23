@@ -1,31 +1,37 @@
+# file lv_2_trova_sospetti_zona_reato.py
+
 def trova_sospetti_zona_reato(driver):
     data = input("Inserisci la data (YYYY-MM-DD): ")
     orario = input("Inserisci l'orario (HH:MM:SS): ")
-    nome_cella = input("Inserisci il nome della cella di reato: ")
+    nome_cella = input("Inserisci il nome della cella: ")
+    
+    # Query Cypher per elencare le persone intestatarie delle SIM collegate alla cella in quel momento
+    query = f"""
+        MATCH (cella:Cella {{nome: '{nome_cella}'}})
+        MATCH (persona:Persona)-[:Possiede]->(sim:Sim)-[collegata:Collegata]->(cella)
+        WHERE datetime('{data}T{orario}') >= collegata.data_inizio_collegamento AND
+              datetime('{data}T{orario}') <= collegata.data_fine_collegamento
+        RETURN DISTINCT persona.nome AS nome_persona, sim.numero AS numero_sim
+    """
     
     with driver.session() as session:
-        result = session.run(
-        """
-        MATCH (zona:Cella {{nome: '{nome_zona}'}})
-        MATCH (zona)<-[:Situata]-(cella:Cella)<-[:Collegata]-(sim:Sim)<-[:Possiede]-(persona:Persona)
-        WHERE datetime('{data}T{orario}') >= cella.data_inizio_collegamento AND
-              datetime('{data}T{orario}') <= cella.data_fine_collegamento
-        RETURN DISTINCT persona
-            """
-        )
+        result = session.run(query)
         
-        # Lista per salvare le persone sospette nella zona di reato
-        sospetti_zona_reato = []
+        # Lista per salvare le persone intestatarie delle SIM collegate alla cella
+        persone_intestatarie = []
         
         # Itera sui record restituiti dalla query
         for record in result:
-            # Accedi al nodo "Persona" dal record
-            persona_node = record["persona"]
-            # Accedi agli attributi "nome" e "cognome" del nodo "Persona"
-            nome_persona = persona_node["nome"]
-            cognome_persona = persona_node["cognome"]
-            # Aggiungi il nome e cognome della persona alla lista dei sospetti
-            sospetti_zona_reato.append((nome_persona, cognome_persona))
+            # Accedi al nome della persona dal record
+            nome_persona = record["nome_persona"]
+            # Accedi al numero della SIM dal record
+            numero_sim = record["numero_sim"]
+            # Aggiungi il nome della persona e il numero della SIM alla lista delle persone intestatarie
+            persone_intestatarie.append((nome_persona, numero_sim))
         
-        # Stampa i sospetti nella zona di reato
-        print(f"Sospetti nella cella {nome_cella} il {data} alle {orario}: {sospetti_zona_reato}")
+        # Stampa le persone intestatarie delle SIM collegate alla cella
+        print(f"Persone intestatarie delle SIM collegate alla cella {nome_cella} il {data} alle {orario}:")
+        for persona, sim in persone_intestatarie:
+            print(f"Nome Persona: {persona}, Numero SIM: {sim}")
+
+
