@@ -27,7 +27,7 @@ Prima di eseguire il progetto, è necessario configurare le credenziali per il d
 
 Una volta configurato correttamente, l'utente può eseguire il file `main.py` per avviare l'applicazione. Verrà visualizzato un menu principale con le opzioni disponibili. L'utente può selezionare l'opzione desiderata e seguire le istruzioni per fornire i dati richiesti.
 
-In alternativa si può configurare il proprio db e fare la query direttamente da Neo4j usando il file creation_db.cypher
+In alternativa si può configurare il proprio db e fare la query direttamente da Neo4j usando il file `creation_db.cypher`
 
 ## Esempi di Utilizzo
 - **Localizzazione Persona Sospetta**
