@@ -2,8 +2,8 @@
 from neo4j import GraphDatabase, basic_auth
 
 USERNAME = "neo4j"
-PASSWORD = "44MhzQ4SUShStF5KDmY6VJXg87MmPPT087FCF_6lkGc"
-DATABASE_URL = "neo4j+s://7a8887c9.databases.neo4j.io"
+PASSWORD = "F30NRAbmU7MFUz8uxJqtgo0anUkku0eygfHUbMR8rDo"
+DATABASE_URL = "neo4j+s://548ca5cd.databases.neo4j.io"
 
 def connect_to_database(USERNAME, PASSWORD, DATABASE_URL):
     return GraphDatabase.driver(DATABASE_URL, auth=basic_auth(USERNAME, PASSWORD))
