@@ -1,3 +1,5 @@
+# FUNZIONA
+
 def trova_persone_intestatarie_cella_in_momento(driver, nome_persona, nome_cella, data, orario):
     with driver.session() as session:
         result = session.run(
