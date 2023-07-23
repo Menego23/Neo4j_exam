@@ -1,7 +1,7 @@
 from db_connector import connect_to_db
-from localizza_persona_sospetta import localizza_persona_sospetta
-from trova_sospetti_zona_reato import trova_sospetti_zona_reato
-from localizza_persone_sospette_in_raggio import trova_persone_intestatarie_cella_in_raggio
+from lv_1_localizza_persona_sospetta import localizza_persona_sospetta
+from lv_2_trova_sospetti_zona_reato import trova_sospetti_zona_reato
+from lv_3_localizza_persone_sospette_in_raggio import trova_persone_intestatarie_cella_in_raggio
 
 def main():
     driver = connect_to_db()
