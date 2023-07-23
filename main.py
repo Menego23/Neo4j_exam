@@ -1,46 +1,33 @@
-# main.py
-import db_functions as db
-import GUI
-
-# Configurazione del database Neo4j
-USERNAME = "neo4j"
-PASSWORD = "F30NRAbmU7MFUz8uxJqtgo0anUkku0eygfHUbMR8rDo"
-DATABASE_URL = "neo4j+s://548ca5cd.databases.neo4j.io"
+from db_connector import connect_to_db
+from localizza_persona_sospetta import localizza_persona_sospetta
+from trova_sospetti_zona_reato import trova_sospetti_zona_reato
+from localizza_persone_sospette_in_raggio import localizza_persone_sospette_in_raggio
 
 def main():
-    db_conn = db.connect_to_database(USERNAME, PASSWORD, DATABASE_URL)
-
+    driver = connect_to_db()
+    
     while True:
-        input_data = GUI.menu()
-        scelta = input_data[0]
-        date_time = input_data[1]
-
-        if scelta == '1':
-            nome = input_data[2]
-            result = db.find_suspect_by_name_datetime(db_conn, nome, date_time)
-            print("Celle telefoniche collegate a una persona tramite SIM e data:")
-            print(result)
-
-        elif scelta == '2':
-            cella = input_data[2]
-            result = db.find_suspect_by_cell(db_conn, cella, date_time)
-            print("Persone intestatarie delle SIM collegate a una cella e data:")
-            print(result)
-
-        elif scelta == '3':
-            latitudine, longitudine, raggio = input_data[2]
-            result = db.find_suspect_by_location(db_conn, latitudine, longitudine, raggio, date_time[0], date_time[1])
-            print("Persone intestatarie delle SIM collegate a celle in un raggio da coordinate e data:")
-            print(result)
-
-        else:
-            print("Opzione non valida")
-
-        again = input("Vuoi effettuare un'altra ricerca? (S/N): ")
-        if again.lower() != 's':
+        print("\nMenu:")
+        print("1. Localizzare una persona sospetta")
+        print("2. Trovare sospetti in una zona di reato")
+        print("3. Localizzare persone sospette in un raggio dalle coordinate geografiche")
+        print("4. Esci")
+        
+        scelta = input("Seleziona un'opzione: ")
+        
+        if scelta == "1":
+            localizza_persona_sospetta(driver)
+        elif scelta == "2":
+            trova_sospetti_zona_reato(driver)
+        elif scelta == "3":
+            localizza_persone_sospette_in_raggio(driver)
+        elif scelta == "4":
+            print("Uscendo dal programma...")
             break
+        else:
+            print("Opzione non valida. Riprova.")
 
-    db.close_connection(db_conn)
+    driver.close()
 
 if __name__ == "__main__":
     main()
